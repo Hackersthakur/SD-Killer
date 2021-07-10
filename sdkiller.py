@@ -15,7 +15,7 @@ def get_version():
     try:
         return open("version","r").read().strip()
     except:
-        return '1.1'
+        return '1.0'
 
 
 __VERSION__ = get_version()
