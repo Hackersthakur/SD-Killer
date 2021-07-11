@@ -15,7 +15,7 @@ def get_version():
     try:
         return open("version","r").read().strip()
     except:
-        return '1.1'
+        return '1.2'
 
 
 __VERSION__ = get_version()
@@ -163,7 +163,7 @@ def menu():
     clr()
     print(random.choice(ALL_COLORS) + logo + RESET_ALL)
     print(Fore.RED+"\n  MADE BY HACKERSTHAKUR  "+Fore.CYAN+"       Contact: Hackersthakurindia@gmail.com")
-    print(Fore.RED+"\tVersion 1.1\n\n"+RESET_ALL)
+    print(Fore.RED+"\tVersion 1.2\n\n"+RESET_ALL)
     print(Fore.YELLOW+Style.BRIGHT+"Options : \n"+RESET_ALL)
     check_for_updates()
     sleep(2)
