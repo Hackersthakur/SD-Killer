@@ -15,7 +15,7 @@ def get_version():
     try:
         return open("version","r").read().strip()
     except:
-        return '1.7'
+        return '1.8'
 
 
 __VERSION__ = get_version()
@@ -163,14 +163,14 @@ def menu():
     clr()
     print(random.choice(ALL_COLORS) + logo + RESET_ALL)
     print(Fore.RED+"\n  MADE BY HACKERSTHAKUR  "+Fore.CYAN+"       Contact: Hackersthakurindia@gmail.com")
-    print(Fore.RED+"\tVersion 1.7\n\n"+RESET_ALL)
+    print(Fore.RED+"\tVersion 1.8\n\n"+RESET_ALL)
     print(Fore.YELLOW+Style.BRIGHT+"Options : \n"+RESET_ALL)
     check_for_updates()
     sleep(2)
     clr()
     print(random.choice(ALL_COLORS) + logo + RESET_ALL)
     print(Fore.RED+"\n  MADE BY HACKERSTHAKUR  "+Fore.CYAN+"       Contact: Hackersthakurindia@gmail.com")
-    print(Fore.RED+"\tVersion 1.7\n\n"+RESET_ALL)
+    print(Fore.RED+"\tVersion 1.8\n\n"+RESET_ALL)
     print(Fore.YELLOW+Style.BRIGHT+"Options : \n"+RESET_ALL)
     print(Fore.LIGHTWHITE_EX+Style.BRIGHT+"\t[1] Default\n"+RESET_ALL)
     print(Fore.LIGHTWHITE_EX+Style.BRIGHT+"\t[2] SubBrute\n"+RESET_ALL)
