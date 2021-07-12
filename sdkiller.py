@@ -15,7 +15,7 @@ def get_version():
     try:
         return open("version","r").read().strip()
     except:
-        return '2.0'
+        return '1.9'
 
 
 __VERSION__ = get_version()
@@ -38,22 +38,21 @@ def do_zip_update():
 def do_git_update():
     success=False
     try:
-        print(ALL_COLORS[0]+"UPDATING "+RESET_ALL,end='')
-        process = subprocess.Popen("git checkout . && git pull ", shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-        while process:
-            print(ALL_COLORS[0]+'.'+RESET_ALL,end='')
-            time.sleep(1)
-            returncode = process.poll()
-            if returncode is not None:
-                break
-        success = not process.returncode
+        os.system("git checkout .")
+        os.system("git pull https://github.com/Hackersthakur/SD-Killer HEAD")
+        clr()
+        print(random.choice(ALL_COLORS) + logo + RESET_ALL)
+        print(Fore.RED+"\n  MADE BY HACKERSTHAKUR  "+Fore.CYAN+"       Contact: Hackersthakurindia@gmail.com")
+        print(Fore.RED+"\tVersion 1.9\n\n"+RESET_ALL)
+        success = True
+
     except:
         success = False
     print("\n")
 
     if success:
         print("SD-KILLER was updated to the latest version")
-        print("Please run the script again to load the latest version")
+        print("Please run the script again to load the latest version\n")
     else:
         print("Unable to update SD-KILLER")
         print("Make Sure To Install 'git' ")
@@ -163,14 +162,14 @@ def menu():
     clr()
     print(random.choice(ALL_COLORS) + logo + RESET_ALL)
     print(Fore.RED+"\n  MADE BY HACKERSTHAKUR  "+Fore.CYAN+"       Contact: Hackersthakurindia@gmail.com")
-    print(Fore.RED+"\tVersion 2.0\n\n"+RESET_ALL)
+    print(Fore.RED+"\tVersion 1.9\n\n"+RESET_ALL)
     print(Fore.YELLOW+Style.BRIGHT+"Options : \n"+RESET_ALL)
     check_for_updates()
     sleep(2)
     clr()
     print(random.choice(ALL_COLORS) + logo + RESET_ALL)
     print(Fore.RED+"\n  MADE BY HACKERSTHAKUR  "+Fore.CYAN+"       Contact: Hackersthakurindia@gmail.com")
-    print(Fore.RED+"\tVersion 2.0\n\n"+RESET_ALL)
+    print(Fore.RED+"\tVersion 1.9\n\n"+RESET_ALL)
     print(Fore.YELLOW+Style.BRIGHT+"Options : \n"+RESET_ALL)
     print(Fore.LIGHTWHITE_EX+Style.BRIGHT+"\t[1] Default\n"+RESET_ALL)
     print(Fore.LIGHTWHITE_EX+Style.BRIGHT+"\t[2] SubBrute\n"+RESET_ALL)
