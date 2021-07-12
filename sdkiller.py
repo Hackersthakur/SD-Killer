@@ -6,6 +6,7 @@ import os,sys,subprocess
 import shutil
 import random
 from time import sleep
+
 url = 'https://crt.sh/'
 
 ALL_COLORS = [Fore.GREEN, Fore.RED, Fore.YELLOW, Fore.BLUE, Fore.MAGENTA, Fore.CYAN, Fore.WHITE]
@@ -15,7 +16,7 @@ def get_version():
     try:
         return open("version","r").read().strip()
     except:
-        return '1.9'
+        return '2.0'
 
 
 __VERSION__ = get_version()
@@ -162,14 +163,14 @@ def menu():
     clr()
     print(random.choice(ALL_COLORS) + logo + RESET_ALL)
     print(Fore.RED+"\n  MADE BY HACKERSTHAKUR  "+Fore.CYAN+"       Contact: Hackersthakurindia@gmail.com")
-    print(Fore.RED+"\tVersion 1.9\n\n"+RESET_ALL)
+    print(Fore.RED+"\tVersion 2.0\n\n"+RESET_ALL)
     print(Fore.YELLOW+Style.BRIGHT+"Options : \n"+RESET_ALL)
     check_for_updates()
     sleep(2)
     clr()
     print(random.choice(ALL_COLORS) + logo + RESET_ALL)
     print(Fore.RED+"\n  MADE BY HACKERSTHAKUR  "+Fore.CYAN+"       Contact: Hackersthakurindia@gmail.com")
-    print(Fore.RED+"\tVersion 1.9\n\n"+RESET_ALL)
+    print(Fore.RED+"\tVersion 2.0\n\n"+RESET_ALL)
     print(Fore.YELLOW+Style.BRIGHT+"Options : \n"+RESET_ALL)
     print(Fore.LIGHTWHITE_EX+Style.BRIGHT+"\t[1] Default\n"+RESET_ALL)
     print(Fore.LIGHTWHITE_EX+Style.BRIGHT+"\t[2] SubBrute\n"+RESET_ALL)
