@@ -135,7 +135,6 @@ def defaultMode():
     sdomains = []
     scraped = ""
     d = ""
-    e = ""
     for a in soup.select('td'):
         b = str(a)
         scraped = scraped+b
