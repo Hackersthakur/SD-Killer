@@ -16,7 +16,7 @@ def get_version():
     try:
         return open("version","r").read().strip()
     except:
-        return '2.0'
+        return '2.1'
 
 
 __VERSION__ = get_version()
@@ -32,7 +32,7 @@ def do_zip_update():
         print("Please run the script again to load the latest version")
     else:
         print("Unable to update SD-KILLER")
-        print("Grab The Latest one From https://github.com/Hackersthakur/SD-Killer.git")
+        print("Grab The Latest one From https://github.com/sthakurindia/SD-Killer.git")
 
     sys.exit()
 
@@ -40,7 +40,7 @@ def do_git_update():
     success=False
     try:
         os.system("git checkout .")
-        os.system("git pull https://github.com/Hackersthakur/SD-Killer HEAD")
+        os.system("git pull https://github.com/sthakurindia/SD-Killer HEAD")
         clr()
         print(random.choice(ALL_COLORS) + logo + RESET_ALL)
         print(Fore.RED+"\n  MADE BY HACKERSTHAKUR  "+Fore.CYAN+"       Contact: Hackersthakurindia@gmail.com")
@@ -58,7 +58,7 @@ def do_git_update():
         print("Unable to update SD-KILLER")
         print("Make Sure To Install 'git' ")
         print("Then run command:")
-        print("git checkout . && git pull https://github.com/Hackersthakur/SD-Killer HEAD")
+        print("git checkout . && git pull https://github.com/sthakurindia/SD-Killer HEAD")
     sys.exit()
 
 def update():
@@ -69,9 +69,9 @@ def update():
 def check_for_updates():
     print("Checking for updates")
     try:
-        fver = requests.get("https://raw.githubusercontent.com/Hackersthakur/SD-Killer/main/version").text.strip()
+        fver = requests.get("https://raw.githubusercontent.com/sthakurindia/SD-Killer/main/version").text.strip()
     except:
-        fver = requests.get("https://raw.githubusercontent.com/Hackersthakur/SD-Killer/main/version",timeout=5).text.strip()
+        fver = requests.get("https://raw.githubusercontent.com/sthakurindia/SD-Killer/main/version",timeout=5).text.strip()
 
     
     if fver != __VERSION__:
@@ -143,11 +143,17 @@ def defaultMode():
         d = d+str(c)+">"
     f = d.split('>')
     alldom =[]
+    l = open(f'{domain}.txt',"w")
+    l.write('')
+    l.close
     for g in f:
         if domain in g and "href" not in g and "Search" not in g:
             if g not in alldom:
                 print(g)
+                l = open(f'{domain}.txt',"a")
+                l.write(g+'\n')
                 alldom.append(g)
+    print(f"\n{Fore.GREEN}{Style.BRIGHT}Subdomains Saved in {domain}.txt")
 
 
 logo="""
@@ -162,14 +168,14 @@ def menu():
     clr()
     print(random.choice(ALL_COLORS) + logo + RESET_ALL)
     print(Fore.RED+"\n  MADE BY HACKERSTHAKUR  "+Fore.CYAN+"       Contact: Hackersthakurindia@gmail.com")
-    print(Fore.RED+"\tVersion 2.0\n\n"+RESET_ALL)
+    print(Fore.RED+"\tVersion 2.1\n\n"+RESET_ALL)
     print(Fore.YELLOW+Style.BRIGHT+"Options : \n"+RESET_ALL)
     check_for_updates()
     sleep(2)
     clr()
     print(random.choice(ALL_COLORS) + logo + RESET_ALL)
     print(Fore.RED+"\n  MADE BY HACKERSTHAKUR  "+Fore.CYAN+"       Contact: Hackersthakurindia@gmail.com")
-    print(Fore.RED+"\tVersion 2.0\n\n"+RESET_ALL)
+    print(Fore.RED+"\tVersion 2.1\n\n"+RESET_ALL)
     print(Fore.YELLOW+Style.BRIGHT+"Options : \n"+RESET_ALL)
     print(Fore.LIGHTWHITE_EX+Style.BRIGHT+"\t[1] Default\n"+RESET_ALL)
     print(Fore.LIGHTWHITE_EX+Style.BRIGHT+"\t[2] SubBrute\n"+RESET_ALL)
@@ -189,4 +195,3 @@ def menu():
         print(Fore.YELLOW+Style.BRIGHT+"You Selected Invalid Option\n"+RESET_ALL)
         
 menu()
-
